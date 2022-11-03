@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/screens/login_screen.dart';
 import 'package:frontend/screens/splash_screen.dart';
 import 'package:get/route_manager.dart';
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
                 title: 'wheel-easy-world',
                 initialRoute: '/',
                 getPages: [
-                  GetPage(name: '/', page: () => Container()),
+                  GetPage(name: '/', page: () => const LoginScreen()),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',
