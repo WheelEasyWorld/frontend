@@ -3,8 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/screens/login_screen.dart';
 import 'package:frontend/screens/splash_screen.dart';
 import 'package:get/route_manager.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk_template.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future main() async {
+  // To load the .env file contents into dotenv.
+  await dotenv.load(fileName: ".env");
+
+  // runApp() 호출 전 Flutter SDK 초기화
+  KakaoSdk.init(
+    nativeAppKey: dotenv.env['NATIVE_APP_KEY'],
+  );
+
   runApp(const MyApp());
 }
 
