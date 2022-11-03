@@ -18,14 +18,15 @@ class LoginScreen extends StatelessWidget {
             SNSButton(
               onPressed: () {},
               icon: 'kakao',
-              label: '카카오톡으로 계속하기',
-              btnColor: const Color(0xFFFBE300),
+              label: '카카오로 시작하기',
+              btnColor: const Color(0xFFFEE500),
+              textColor: const Color(0xFF191919),
             ),
             SizedBox(height: 13.h),
             SNSButton(
               onPressed: () {},
               icon: 'naver',
-              label: '네이버로 계속하기',
+              label: '네이버로 시작하기',
               btnColor: const Color(0xFF03CF5D),
               textColor: Colors.white,
             ),
@@ -33,7 +34,7 @@ class LoginScreen extends StatelessWidget {
             SNSButton(
               onPressed: () {},
               icon: 'google',
-              label: '구글로 계속하기',
+              label: '구글로 시작하기',
               borderSide: const BorderSide(),
               btnColor: Colors.white,
             ),
