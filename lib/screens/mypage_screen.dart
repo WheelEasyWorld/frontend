@@ -111,14 +111,14 @@ List<Widget> buildHeart() {
           child: Padding(
             padding: EdgeInsets.all(10.w),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10.r),
                   child: Image.asset(
                     data["heart"][i]["img"],
                     width: 88.w,
-                    height: 55.h,
+                    height: 50.h,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -148,7 +148,7 @@ List<Widget> buildHeart() {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style:
-                        TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w100),
+                        TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w100),
                   ),
                 ),
               ],
@@ -289,7 +289,7 @@ Widget buildCollection(String title, dynamic item, Function()? onPressed) {
               title,
               style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16.sp,
+                fontSize: 14.sp,
               ),
             ),
             IconButton(
@@ -300,7 +300,7 @@ Widget buildCollection(String title, dynamic item, Function()? onPressed) {
             ),
           ],
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 15.h),
         Row(
           children: item,
         )
