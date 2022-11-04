@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/models/data.dart';
 import 'package:frontend/screens/constants.dart';
+import 'package:get/get.dart';
 
 class MyPageScreen extends StatelessWidget {
   const MyPageScreen({super.key});
@@ -69,9 +70,17 @@ class MyPageScreen extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        buildCollection("민원 모아보기", buildRequest(), () {}),
+                        buildCollection(
+                          "민원 모아보기",
+                          buildRequest(),
+                          () => Get.toNamed('/mypage/request'),
+                        ),
                         SizedBox(height: 15.h),
-                        buildCollection("좋아요한 장소", buildHeart(), () {}),
+                        buildCollection(
+                          "좋아요한 장소",
+                          buildHeart(),
+                          () {},
+                        ),
                       ],
                     ),
                     TextButton(
