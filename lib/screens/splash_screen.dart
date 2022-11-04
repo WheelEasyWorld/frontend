@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
         bottom: false,
         child: Padding(
           padding: EdgeInsets.fromLTRB(45.w, 0, 45.w, 0),
-          child: Center(child: Image.asset('assets/images/logo.png')),
+          child: Center(child: Image.asset('assets/images/splash.png')),
         ),
       ),
     );
