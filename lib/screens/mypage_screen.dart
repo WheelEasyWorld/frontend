@@ -216,16 +216,19 @@ List<Widget> buildRequest() {
                 ),
                 SizedBox(height: 10.h),
                 Container(
-                  padding: EdgeInsets.fromLTRB(12.w, 3.h, 12.w, 3.h),
+                  width: 48.w,
+                  height: 21.h,
                   decoration: BoxDecoration(
                     color: (data["request"][i]["status"] == "처리중")
                         ? kPinkColor
                         : kGreenColor,
                     borderRadius: BorderRadius.all(Radius.circular(30.r)),
                   ),
-                  child: Text(
-                    data["request"][i]["status"],
-                    style: TextStyle(color: Colors.white, fontSize: 10.sp),
+                  child: Center(
+                    child: Text(
+                      data["request"][i]["status"],
+                      style: TextStyle(color: Colors.white, fontSize: 10.sp),
+                    ),
                   ),
                 ),
                 SizedBox(height: 10.h),
