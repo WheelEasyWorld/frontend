@@ -17,6 +17,7 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/logo.png'),
+            SizedBox(height: 100.h),
             SNSButton(
               onPressed: () {
                 kakaoLogin();

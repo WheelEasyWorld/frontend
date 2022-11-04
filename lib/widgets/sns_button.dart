@@ -35,7 +35,7 @@ class SNSButton extends StatelessWidget {
           ),
         ),
         icon: Image.asset(
-          'assets/images/${icon}_logo.png',
+          'assets/images/sns/$icon.png',
           width: 35.w,
         ),
         label: SizedBox(
