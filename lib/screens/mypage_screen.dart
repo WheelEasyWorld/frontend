@@ -148,7 +148,7 @@ List<Widget> buildHeart() {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style:
-                        TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w100),
+                        TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w200),
                   ),
                 ),
               ],
@@ -205,9 +205,12 @@ List<Widget> buildRequest() {
                       color: Colors.grey,
                       size: 22.h,
                     ),
+                    SizedBox(width: 8.w),
                     Flexible(
                       child: Text(
                         data["request"][i]["address"],
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.right,
                         style: TextStyle(fontSize: 12.sp),
                       ),
@@ -238,7 +241,7 @@ List<Widget> buildRequest() {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style:
-                        TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w100),
+                        TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w200),
                   ),
                 ),
               ],
