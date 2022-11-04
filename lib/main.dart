@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/screens/login_screen.dart';
+import 'package:frontend/screens/mypage_screen.dart';
 import 'package:frontend/screens/splash_screen.dart';
 import 'package:get/route_manager.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_template.dart';
@@ -45,9 +46,10 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/',
+                initialRoute: '/my-page',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
+                  GetPage(name: '/my-page', page: () => const MyPageScreen()),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',
