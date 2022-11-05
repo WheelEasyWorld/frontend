@@ -22,7 +22,7 @@ class RequestScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.r),
               ),
-              color: Colors.grey.shade200,
+              color: Colors.grey.shade100,
               child: Padding(
                 padding: EdgeInsets.all(10.w),
                 child: Column(
@@ -32,15 +32,15 @@ class RequestScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          data["request"][index]["type"],
+                          data["request"][index]["type"] ?? "type",
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 16.sp,
                           ),
                         ),
                         Container(
-                          width: 48.w,
-                          height: 21.h,
+                          width: 60.w,
+                          height: 22.h,
                           decoration: BoxDecoration(
                             color: (data["request"][index]["status"] == "처리중")
                                 ? kPinkColor
@@ -50,9 +50,9 @@ class RequestScreen extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              data["request"][index]["status"],
+                              data["request"][index]["status"] ?? "status",
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 10.sp),
+                                  color: Colors.white, fontSize: 12.sp),
                             ),
                           ),
                         ),
@@ -68,7 +68,7 @@ class RequestScreen extends StatelessWidget {
                           size: 22.h,
                         ),
                         Text(
-                          data["request"][index]["address"],
+                          data["request"][index]["address"] ?? "address",
                           textAlign: TextAlign.left,
                           style: TextStyle(fontSize: 14.sp),
                         ),
