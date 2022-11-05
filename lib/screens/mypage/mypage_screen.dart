@@ -109,59 +109,56 @@ List<Widget> buildHeart() {
   int itemCount = data["heart"].length;
   for (int i = 0; i < itemCount; i++) {
     list.add(SizedBox(
-      width: 108.w,
+      width: 106.w,
       height: 135.h,
-      child: Padding(
-        padding: (i != 3) ? EdgeInsets.only(right: 2.w) : EdgeInsets.zero,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.r),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(10.w),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10.r),
-                  child: Image.asset(
-                    data["heart"][i]["img"],
-                    width: 88.w,
-                    height: 50.h,
-                    fit: BoxFit.fill,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(10.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10.r),
+                child: Image.asset(
+                  data["heart"][i]["img"],
+                  width: 88.w,
+                  height: 50.h,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.place,
+                    color: Colors.grey,
+                    size: 15.h,
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.place,
-                      color: Colors.grey,
-                      size: 15.h,
+                  Flexible(
+                    child: Text(
+                      data["heart"][i]["name"],
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      textAlign: TextAlign.right,
+                      style: TextStyle(fontSize: 12.sp),
                     ),
-                    Flexible(
-                      child: Text(
-                        data["heart"][i]["name"],
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 12.sp),
-                      ),
-                    ),
-                  ],
-                ),
-                Flexible(
-                  child: Text(
-                    data["heart"][i]["address"],
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style:
-                        TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w200),
                   ),
+                ],
+              ),
+              Flexible(
+                child: Text(
+                  data["heart"][i]["address"],
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style:
+                      TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w200),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -170,18 +167,15 @@ List<Widget> buildHeart() {
 
   for (int i = itemCount; i < 3; i++) {
     list.add(SizedBox(
-        width: 108.w,
+        width: 106.w,
         height: 135.h,
-        child: Padding(
-          padding: (i != 3) ? EdgeInsets.only(right: 2.w) : EdgeInsets.zero,
-          child: Card(
-              elevation: 0,
-              color: Colors.grey.withOpacity(0.5),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Container()),
-        )));
+        child: Card(
+            elevation: 0,
+            color: Colors.grey.withOpacity(0.5),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+            child: Container())));
   }
 
   return list;
@@ -192,69 +186,66 @@ List<Widget> buildRequest() {
   int itemCount = data["request"].length;
   for (int i = 0; i < itemCount; i++) {
     list.add(SizedBox(
-      width: 108.w,
+      width: 106.w,
       height: 135.h,
-      child: Padding(
-        padding: (i != 3) ? EdgeInsets.only(right: 2.w) : EdgeInsets.zero,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.r),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(10.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.place,
-                      color: Colors.grey,
-                      size: 22.h,
-                    ),
-                    SizedBox(width: 8.w),
-                    Flexible(
-                      child: Text(
-                        data["request"][i]["address"],
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 12.sp),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10.h),
-                Container(
-                  width: 48.w,
-                  height: 21.h,
-                  decoration: BoxDecoration(
-                    color: (data["request"][i]["status"] == "처리중")
-                        ? kPinkColor
-                        : kGreenColor,
-                    borderRadius: BorderRadius.all(Radius.circular(30.r)),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(10.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.place,
+                    color: Colors.grey,
+                    size: 22.h,
                   ),
-                  child: Center(
+                  SizedBox(width: 8.w),
+                  Flexible(
                     child: Text(
-                      data["request"][i]["status"],
-                      style: TextStyle(color: Colors.white, fontSize: 10.sp),
+                      data["request"][i]["address"],
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.right,
+                      style: TextStyle(fontSize: 12.sp),
                     ),
                   ),
+                ],
+              ),
+              SizedBox(height: 10.h),
+              Container(
+                width: 48.w,
+                height: 21.h,
+                decoration: BoxDecoration(
+                  color: (data["request"][i]["status"] == "처리중")
+                      ? kPinkColor
+                      : kGreenColor,
+                  borderRadius: BorderRadius.all(Radius.circular(30.r)),
                 ),
-                SizedBox(height: 10.h),
-                Flexible(
+                child: Center(
                   child: Text(
-                    data["request"][i]["detail"],
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style:
-                        TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w200),
+                    data["request"][i]["status"],
+                    style: TextStyle(color: Colors.white, fontSize: 10.sp),
                   ),
                 ),
-              ],
-            ),
+              ),
+              SizedBox(height: 10.h),
+              Flexible(
+                child: Text(
+                  data["request"][i]["detail"],
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style:
+                      TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w200),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -263,63 +254,55 @@ List<Widget> buildRequest() {
 
   for (int i = itemCount; i < 3; i++) {
     list.add(SizedBox(
-        width: 108.w,
+        width: 106.w,
         height: 135.h,
-        child: Padding(
-          padding: (i != 3) ? EdgeInsets.only(right: 2.w) : EdgeInsets.zero,
-          child: Card(
-              elevation: 0,
-              color: Colors.grey.withOpacity(0.5),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Container()),
-        )));
+        child: Card(
+            elevation: 0,
+            color: Colors.grey.withOpacity(0.5),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+            child: Container())));
   }
 
   return list;
 }
 
 Widget buildCollection(String title, dynamic item, Function()? onPressed) {
-  return Container(
-    padding: EdgeInsets.all(10.w),
-    decoration: BoxDecoration(
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.shade400,
-          spreadRadius: 0,
-          blurRadius: 2,
-          offset: const Offset(1, 1), // changes position of shadow
-        ),
-      ],
-      color: Colors.grey.shade100,
-      borderRadius: BorderRadius.all(Radius.circular(10.r)),
+  return Card(
+    elevation: 3,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.r),
     ),
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 14.sp,
+    color: Colors.grey.shade100,
+    child: Padding(
+      padding: EdgeInsets.all(10.w),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14.sp,
+                ),
               ),
-            ),
-            IconButton(
-              padding: EdgeInsets.zero,
-              constraints: const BoxConstraints(),
-              onPressed: onPressed,
-              icon: const Icon(Icons.add),
-            ),
-          ],
-        ),
-        SizedBox(height: 15.h),
-        Row(
-          children: item,
-        )
-      ],
+              IconButton(
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+                onPressed: onPressed,
+                icon: const Icon(Icons.add),
+              ),
+            ],
+          ),
+          SizedBox(height: 15.h),
+          Row(
+            children: item,
+          )
+        ],
+      ),
     ),
   );
 }
