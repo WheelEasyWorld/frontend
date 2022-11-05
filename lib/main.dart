@@ -4,7 +4,9 @@ import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:get/get.dart';
 import 'package:frontend/screens/login_screen.dart';
-import 'package:frontend/screens/mypage_screen.dart';
+import 'package:frontend/screens/mypage/heart_screen.dart';
+import 'package:frontend/screens/mypage/mypage_screen.dart';
+import 'package:frontend/screens/mypage/request_screen.dart';
 import 'package:frontend/screens/splash_screen.dart';
 import 'package:get/route_manager.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_template.dart';
@@ -49,10 +51,16 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/my-page',
+                initialRoute: '/mypage',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
-                  GetPage(name: '/my-page', page: () => const MyPageScreen()),
+                  GetPage(name: '/mypage', page: () => const MyPageScreen()),
+                  GetPage(
+                      name: '/mypage/request',
+                      page: () => const RequestScreen()),
+                  GetPage(
+                      name: '/mypage/heart', page: () => const HeartScreen()),
+
                   GetPage(
               name: '/store_detail',
               page: () => StoreDetailScreen(),
