@@ -3,35 +3,68 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:get/get.dart';
+import 'package:frontend/screens/login_screen.dart';
+import 'package:frontend/screens/mypage_screen.dart';
+import 'package:frontend/screens/splash_screen.dart';
+import 'package:get/route_manager.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk_template.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future main() async {
+  // To load the .env file contents into dotenv.
+  await dotenv.load(fileName: ".env");
+
+  // runApp() 호출 전 Flutter SDK 초기화
+  KakaoSdk.init(
+    nativeAppKey: dotenv.env['NATIVE_APP_KEY'],
+  );
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      builder: (BuildContext context, Widget? child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'wheel-easy-world',
-          initialRoute: '/',
-          getPages: [
-            GetPage(name: '/', page: () => CommunityScreen()),
-            GetPage(
+    return FutureBuilder(
+      future: Init.instance.initialize(),
+      builder: (context, AsyncSnapshot snapshot) {
+        // Show splash screen while waiting for app resources to load:
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return ScreenUtilInit(
+            designSize: const Size(375, 812), //iPhone 13 mini
+            builder: (context, child) {
+              return const MaterialApp(
+                debugShowCheckedModeBanner: false,
+                home: SplashScreen(),
+              );
+            },
+          );
+        } else {
+          // Loading is done, return the app:
+          return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            builder: (context, child) {
+              return GetMaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'wheel-easy-world',
+                initialRoute: '/my-page',
+                getPages: [
+                  GetPage(name: '/', page: () => const LoginScreen()),
+                  GetPage(name: '/my-page', page: () => const MyPageScreen()),
+                  GetPage(
               name: '/store_detail',
               page: () => StoreDetailScreen(),
-            )
-          ],
-          theme: ThemeData(
-              //fontFamily: 'Noto_Sans_KR',
-              ),
-        );
+            ),
+                ],
+                theme: ThemeData(
+                  fontFamily: 'Noto_Sans_KR',
+                ),
+              );
+            },
+          );
+        }
       },
     );
   }
