@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/screens/community/community_screen.dart';
+import 'package:frontend/screens/community/store_detail_screen.dart';
+import 'package:get/get.dart';
 import 'package:frontend/screens/login_screen.dart';
 import 'package:frontend/screens/mypage/heart_screen.dart';
 import 'package:frontend/screens/mypage/mypage_screen.dart';
@@ -57,6 +60,11 @@ class MyApp extends StatelessWidget {
                       page: () => const RequestScreen()),
                   GetPage(
                       name: '/mypage/heart', page: () => const HeartScreen()),
+
+                  GetPage(
+              name: '/store_detail',
+              page: () => StoreDetailScreen(),
+            ),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',
