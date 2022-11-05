@@ -43,6 +43,8 @@ dependencies:
   kakao_flutter_sdk: ^1.2.2
   kakao_flutter_sdk_user: ^1.2.2
   flutter_dotenv: ^5.0.2
+  firebase_core: ^2.1.1
+  cloud_firestore: ^4.0.3
   
 dev_dependencies:
   flutter_test:

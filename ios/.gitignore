@@ -35,3 +35,6 @@ Runner/GeneratedPluginRegistrant.*
 
 # API key
 APIKEY.xcconfig
+GoogleService-Info.plist
+
+firebase_app_id_file.json

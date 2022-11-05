@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/firebase_options.dart';
 import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:get/get.dart';
@@ -19,6 +21,11 @@ Future main() async {
   // runApp() 호출 전 Flutter SDK 초기화
   KakaoSdk.init(
     nativeAppKey: dotenv.env['NATIVE_APP_KEY'],
+  );
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(const MyApp());
@@ -51,7 +58,7 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/mypage',
+                initialRoute: '/',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
                   GetPage(name: '/mypage', page: () => const MyPageScreen()),
@@ -60,11 +67,10 @@ class MyApp extends StatelessWidget {
                       page: () => const RequestScreen()),
                   GetPage(
                       name: '/mypage/heart', page: () => const HeartScreen()),
-
                   GetPage(
-              name: '/store_detail',
-              page: () => StoreDetailScreen(),
-            ),
+                    name: '/store_detail',
+                    page: () => StoreDetailScreen(),
+                  ),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',
