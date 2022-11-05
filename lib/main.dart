@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/screens/login_screen.dart';
+import 'package:frontend/screens/mypage/heart_screen.dart';
 import 'package:frontend/screens/mypage/mypage_screen.dart';
 import 'package:frontend/screens/mypage/request_screen.dart';
 import 'package:frontend/screens/splash_screen.dart';
@@ -54,6 +55,8 @@ class MyApp extends StatelessWidget {
                   GetPage(
                       name: '/mypage/request',
                       page: () => const RequestScreen()),
+                  GetPage(
+                      name: '/mypage/heart', page: () => const HeartScreen()),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',

@@ -26,12 +26,26 @@ Map<String, dynamic> data = {
     {
       "name": "츠바키노하나",
       "address": "대구 중구 문우관길 25 1층",
-      "img": "assets/images/food/food-1.png"
+      "img": "assets/images/food/food-1.png",
+      "facility": [
+        "1층",
+        "경사로",
+        "문턱있음",
+        "테이블석",
+        "엘리베이터",
+        "장애인화장실"
+      ],
     },
     {
       "name": "사야까",
       "address": "대구 중구 국채보상로125길 4 1층",
-      "img": "assets/images/food/food-2.png"
+      "img": "assets/images/food/food-2.png",
+      "facility": [
+        "1층",
+        "경사로",
+        "문턱있음",
+        "테이블석",
+      ],
     },
   ]
 };

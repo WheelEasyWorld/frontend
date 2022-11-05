@@ -79,7 +79,7 @@ class MyPageScreen extends StatelessWidget {
                         buildCollection(
                           "좋아요한 장소",
                           buildHeart(),
-                          () {},
+                          () => Get.toNamed('/mypage/heart'),
                         ),
                       ],
                     ),
@@ -131,7 +131,7 @@ List<Widget> buildHeart() {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.place,
@@ -171,7 +171,7 @@ List<Widget> buildHeart() {
         height: 135.h,
         child: Card(
             elevation: 0,
-            color: Colors.grey.withOpacity(0.5),
+            color: Colors.grey.shade300,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.r),
             ),
@@ -204,7 +204,7 @@ List<Widget> buildRequest() {
                   Icon(
                     Icons.place,
                     color: Colors.grey,
-                    size: 22.h,
+                    size: 20.h,
                   ),
                   SizedBox(width: 8.w),
                   Flexible(
