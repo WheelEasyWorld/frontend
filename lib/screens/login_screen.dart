@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/services/kakao_login.dart';
 import 'package:frontend/widgets/sns_button.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_talk.dart';
 
@@ -21,6 +22,7 @@ class LoginScreen extends StatelessWidget {
             SNSButton(
               onPressed: () {
                 kakaoLogin();
+                getUser();
               },
               icon: 'kakao',
               label: '카카오로 시작하기',

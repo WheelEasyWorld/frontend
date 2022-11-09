@@ -1,10 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/firebase_options.dart';
 import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:get/get.dart';
 import 'package:frontend/screens/login_screen.dart';
-import 'package:frontend/screens/mypage_screen.dart';
+import 'package:frontend/screens/mypage/heart_screen.dart';
+import 'package:frontend/screens/mypage/mypage_screen.dart';
+import 'package:frontend/screens/mypage/request_screen.dart';
 import 'package:frontend/screens/splash_screen.dart';
 import 'package:get/route_manager.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_template.dart';
@@ -17,6 +21,11 @@ Future main() async {
   // runApp() 호출 전 Flutter SDK 초기화
   KakaoSdk.init(
     nativeAppKey: dotenv.env['NATIVE_APP_KEY'],
+  );
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
 
   runApp(const MyApp());
@@ -49,11 +58,16 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/community',
+                initialRoute: '/',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
-                  GetPage(name: '/my-page', page: () => const MyPageScreen()),
-                  GetPage(name: '/community', page: () => CommunityScreen()),
+                  GetPage(name: '/mypage', page: () => const MyPageScreen()),
+                  GetPage(
+                      name: '/mypage/request',
+                      page: () => const RequestScreen()),
+                  GetPage(
+                      name: '/mypage/heart', page: () => const HeartScreen()),
+                      GetPage(name: '/community', page: () => CommunityScreen()),
                   GetPage(
                     name: '/store_detail',
                     page: () => StoreDetailScreen(),
