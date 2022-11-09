@@ -26,8 +26,6 @@ Future getUser() async {
     }
   } catch (error) {
     debugPrint('사용자 정보 요청 실패 $error');
-
-    return null;
   }
 }
 
