@@ -16,7 +16,7 @@ PreferredSizeWidget CommunityAppbar() {
     title: Text(
       "Can Go 커뮤니티",
       style: TextStyle(
-          color: Colors.white, fontSize: 19, fontWeight: FontWeight.w700),
+          color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
     ),
     centerTitle: true,
   );

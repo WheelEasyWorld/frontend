@@ -10,6 +10,8 @@ class StoreInformation extends StatefulWidget {
 }
 
 class _StoreInformationState extends State<StoreInformation> {
+  int like_count = 4;
+  bool like_value = true;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -91,11 +93,26 @@ class _StoreInformationState extends State<StoreInformation> {
             children: [
               InkWell(
                 splashColor: Colors.transparent,
-                child: Icon(
-                  Icons.favorite_border_rounded,
-                  size: 18.h,
-                ),
-                onTap: () {},
+                child: like_value
+                    ? Icon(
+                        Icons.favorite_border_rounded,
+                        size: 18.h,
+                      )
+                    : Icon(
+                        Icons.favorite_rounded,
+                        size: 18.h,
+                        color: Color.fromARGB(255, 255, 26, 45),
+                      ),
+                onTap: () {
+                  setState(() {
+                    if (like_value == true) {
+                      like_count += 1;
+                    } else {
+                      like_count -= 1;
+                    }
+                    like_value = !like_value;
+                  });
+                },
               ),
               Row(
                 children: [
@@ -108,7 +125,7 @@ class _StoreInformationState extends State<StoreInformation> {
                     width: 7.w,
                   ),
                   Text(
-                    '0',
+                    like_count.toString(),
                     style: TextStyle(
                         fontSize: 12, color: Color.fromARGB(100, 0, 0, 0)),
                   )
