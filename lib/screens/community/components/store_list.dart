@@ -152,7 +152,7 @@ class _StoreListState extends State<StoreList> {
                       color: kGreyColor,
                     ),
                     changeStoreInfo(
-                        int.parse(widget.storeList[index]["infoNum"]))
+                        int.parse(widget.storeList[index]["infonum"]))
                   ],
                 ),
               ),

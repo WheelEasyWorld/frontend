@@ -49,14 +49,15 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/my-page',
+                initialRoute: '/community',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
                   GetPage(name: '/my-page', page: () => const MyPageScreen()),
+                  GetPage(name: '/community', page: () => CommunityScreen()),
                   GetPage(
-              name: '/store_detail',
-              page: () => StoreDetailScreen(),
-            ),
+                    name: '/store_detail',
+                    page: () => StoreDetailScreen(),
+                  ),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',
