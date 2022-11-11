@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/firebase_options.dart';
-import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:get/get.dart';
 import 'package:frontend/screens/login_screen.dart';
