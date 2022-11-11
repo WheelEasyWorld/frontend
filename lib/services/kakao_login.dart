@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/chat-bot/components/chat.dart';
+import 'package:get/get.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_talk.dart';
 
 Future getUser() async {
@@ -24,6 +26,7 @@ Future getUser() async {
           .then((value) => debugPrint("User Added"))
           .catchError((error) => debugPrint("Failed to add user: $error"));
     }
+    Get.to(const ChatScreen());
   } catch (error) {
     debugPrint('사용자 정보 요청 실패 $error');
   }

@@ -1,20 +1,20 @@
-// import 'package:firebase_auth/firebase_auth.dart';
+//채팅 앱의 메세지를 보여주는 페이지입니다.
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:frontend/screens/chat-bot/components/chat_bubble.dart';
 import 'package:get/get.dart';
-import 'chat_list_item.dart';
 
 class Messages extends StatelessWidget {
   const Messages({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // final user = FirebaseAuth.instance.currentUser;
     return StreamBuilder(
       stream: FirebaseFirestore.instance
-          .collection('chat')
+          .collection('chats')
           .orderBy('time', descending: true)
           .snapshots(),
+      //최신의 snapshot을 가져오기 위한 절차
       builder: (context,
           AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -31,10 +31,9 @@ class Messages extends StatelessWidget {
             return Padding(
               padding: EdgeInsets.symmetric(
                   vertical: Get.height * 0.01, horizontal: Get.width * 0.015),
-              child: ChatListItem(
-                chatDocs[index]['photoUrl'],
+              child: ChatBubble(
+                chatDocs[index]['nickname'],
                 chatDocs[index]['text'],
-                chatDocs[index]['userName'],
               ),
             );
           },
