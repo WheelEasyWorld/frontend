@@ -17,6 +17,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 Future main() async {
   // To load the .env file contents into dotenv.
   await dotenv.load(fileName: ".env");
+
   // runApp() 호출 전 Flutter SDK 초기화
   KakaoSdk.init(
     nativeAppKey: dotenv.env['NATIVE_APP_KEY'],
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/community',
+                initialRoute: '/',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
                   GetPage(name: '/mypage', page: () => const MyPageScreen()),
@@ -66,7 +67,7 @@ class MyApp extends StatelessWidget {
                       page: () => const RequestScreen()),
                   GetPage(
                       name: '/mypage/heart', page: () => const HeartScreen()),
-                  GetPage(name: '/community', page: () => CommunityScreen()),
+                      GetPage(name: '/community', page: () => CommunityScreen()),
                   GetPage(
                     name: '/store_detail',
                     page: () => StoreDetailScreen(),

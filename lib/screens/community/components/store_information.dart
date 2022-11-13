@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:frontend/screens/community/components/kakao_share_manager.dart';
 import 'package:frontend/screens/constants.dart';
 
 class StoreInformation extends StatefulWidget {
@@ -143,13 +142,7 @@ class _StoreInformationState extends State<StoreInformation> {
                   Icons.share_rounded,
                   size: 18.h,
                 ),
-                onTap: () {
-                  KakaoShareManager(
-                      "대구 중구 문우관길 25 1층",
-                      "츠바키노하나",
-                      "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/detail01.png?raw=true",
-                      "1층 / 문턱있음 / 경사로 / 테이블석 / 엘리베이터 / 장애인화장실");
-                },
+                onTap: () {},
               ),
               Text(
                 '공유하기',
