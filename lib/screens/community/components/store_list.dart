@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/screens/community/components/kakao_share_manager.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:frontend/screens/constants.dart';
 import 'package:get/get.dart';
@@ -134,7 +135,20 @@ class _StoreListState extends State<StoreList> {
                                           Icons.share_rounded,
                                           size: 15.h,
                                         ),
-                                        onTap: () {},
+                                        onTap: () {
+                                          String _address = widget
+                                              .storeList[index]["address"]!;
+                                          String _title =
+                                              widget.storeList[index]["title"]!;
+                                          String _url =
+                                              widget.storeList[index]["url"]!;
+                                          KakaoShareManager(
+                                              _address,
+                                              widget.storeList[index]["title"]!,
+                                              widget.storeList[index]["url"]!,
+                                              widget.storeList[index]
+                                                  ["address"]!);
+                                        },
                                       ),
                                     ],
                                   )

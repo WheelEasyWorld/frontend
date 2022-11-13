@@ -21,6 +21,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
     _storeList = [
       {
         "images": "assets/images/store02.png",
+        "url":
+            "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/store02.png?raw=true",
         "title": "도마29",
         "address": "대구 중구 동성로1길 46-2",
         "distance": "347m",
@@ -29,6 +31,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
       },
       {
         "images": "assets/images/store03.png",
+        "url":
+            "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/store03.png?raw=true",
         "title": "수야",
         "address": "대구 중구 동성로3길 32-37",
         "distance": "563m",
@@ -37,6 +41,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
       },
       {
         "images": "assets/images/detail01.png",
+        "url":
+            "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/detail01.png?raw=true",
         "title": "츠바키노하나",
         "address": "대구 중구 문우관길 25 1층",
         "distance": "708m",
@@ -45,6 +51,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
       },
       {
         "images": "assets/images/store01.png",
+        "url":
+            "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/store01.png?raw=true",
         "title": "사야까",
         "address": "대구 중구 국채보상로125길 4 1층",
         "distance": "765m",
@@ -131,6 +139,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/store02.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/store02.png?raw=true",
               "title": "도마29",
               "address": "대구 중구 동성로1길 46-2",
               "distance": "347m",
@@ -139,6 +149,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/store03.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/store03.png?raw=true",
               "title": "수야",
               "address": "대구 중구 동성로3길 32-37",
               "distance": "563m",
@@ -147,6 +159,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/detail01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/detail01.png?raw=true",
               "title": "츠바키노하나",
               "address": "대구 중구 문우관길 25 1층",
               "distance": "708m",
@@ -155,6 +169,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/store01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/store01.png?raw=true",
               "title": "사야까",
               "address": "대구 중구 국채보상로125길 4 1층",
               "distance": "765m",
@@ -167,6 +183,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/cafe03.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/cafe03.png?raw=true",
               "title": "팡팡팡",
               "address": "대구 중구 동성로1길 15 2층",
               "distance": "157m",
@@ -175,6 +193,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/cafe01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/cafe01.png?raw=true",
               "title": "핑퐁커피",
               "address": "대구 중구 동성로2길 23 1층",
               "distance": "366m",
@@ -183,6 +203,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/cafe02.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/cafe02.png?raw=true",
               "title": "구삼커피",
               "address": "대구 중구 봉산문화2길 16-3",
               "distance": "787m",
@@ -195,6 +217,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/convenience_store01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/convenience_store01.png?raw=true",
               "title": "GS25 뉴동성로점",
               "address": "대구 중구 중앙대로 390",
               "distance": "11m",
@@ -203,6 +227,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/convenience_store03.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/convenience_store03.png?raw=true",
               "title": "세븐일레븐 대구동성로토요코인점",
               "address": "대구 중구 동성로1길 15 1층",
               "distance": "157m",
@@ -211,6 +237,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/convenience_store02.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/convenience_store02.png?raw=true",
               "title": "이마트24 대구반월당점",
               "address": "대구 중구 중앙대로 372",
               "distance": "165m",
@@ -223,6 +251,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/mart01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/mart01.png?raw=true",
               "title": "일광슈퍼",
               "address": "대구 중구 달구벌대로 2113",
               "distance": "349m",
@@ -235,6 +265,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/hospital01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/hospital01.png?raw=true",
               "title": "일맥한의원 대구",
               "address": "대구 중구 동성로 2 협성빌딩 5층",
               "distance": "110m",
@@ -243,6 +275,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/hospital02.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/hospital02.png?raw=true",
               "title": "엣지성형외과의원",
               "address": "대구 중구 동성로1길 28 4층",
               "distance": "248m",
@@ -251,6 +285,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/hospital03.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/hospital03.png?raw=true",
               "title": "류마내과의원",
               "address": "대구 중구 달구벌대로 2120",
               "distance": "461m",
@@ -263,6 +299,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/drug_store01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/drug_store01.png?raw=true",
               "title": "한성약국",
               "address": "대구 중구 중앙대로 386-1",
               "distance": "39m",
@@ -271,6 +309,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/drug_store02.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/drug_store02.png?raw=true",
               "title": "푸른약국",
               "address": "대구 중구 중앙대로 372 현대투자신탁",
               "distance": "165m",
@@ -279,6 +319,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/drug_store03.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/drug_store03.png?raw=true",
               "title": "세민약국",
               "address": "대구 중구 달구벌대로 2095",
               "distance": "274m",
@@ -291,6 +333,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/bank01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/bank01.png?raw=true",
               "title": "KB국민은행 대구",
               "address": "대구 중구 중앙대로 401",
               "distance": "132m",
@@ -299,6 +343,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/bank03.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/bank03.png?raw=true",
               "title": "우리은행 대구지점",
               "address": "대구 중구 중앙대로 418",
               "distance": "276m",
@@ -307,6 +353,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
             },
             {
               "images": "assets/images/bank02.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/bank02.png?raw=true",
               "title": "대구은행 중앙로지점",
               "address": "대구 중구 중앙대로 425",
               "distance": "387m",
@@ -319,6 +367,8 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           _storeList = [
             {
               "images": "assets/images/post_office01.png",
+              "url":
+                  "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/post_office01.png?raw=true",
               "title": "대구반월당우체국",
               "address": "대구 중구 달구벌대로 2141 1층",
               "distance": "561m",
