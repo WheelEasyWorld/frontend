@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/',
+                initialRoute: '/community',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
                   GetPage(name: '/mypage', page: () => const MyPageScreen()),
@@ -67,6 +67,7 @@ class MyApp extends StatelessWidget {
                       page: () => const RequestScreen()),
                   GetPage(
                       name: '/mypage/heart', page: () => const HeartScreen()),
+                  GetPage(name: '/community', page: () => CommunityScreen()),
                   GetPage(
                     name: '/store_detail',
                     page: () => StoreDetailScreen(),
