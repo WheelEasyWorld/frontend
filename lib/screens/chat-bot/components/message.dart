@@ -5,13 +5,13 @@ import 'package:frontend/screens/chat-bot/components/chat_bubble.dart';
 import 'package:get/get.dart';
 
 class Messages extends StatelessWidget {
-  const Messages({Key? key}) : super(key: key);
-
+  const Messages(this.userId, {super.key});
+  final num userId;
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: FirebaseFirestore.instance
-          .collection('chat')
+          .collection('chat-$userId')
           .orderBy('time', descending: true)
           .snapshots(),
       //최신의 snapshot을 가져오기 위한 절차
@@ -31,10 +31,11 @@ class Messages extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(
-                  vertical: Get.height * 0.01, horizontal: Get.width * 0.015),
+                  vertical: 1, horizontal: Get.width * 0.015),
               child: ChatBubble(
                 chatDocs[index]['text'],
                 chatDocs[index]['userID'],
+                userId,
               ),
             );
           },

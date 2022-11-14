@@ -19,6 +19,8 @@ class _NewMessageState extends State<NewMessage> {
     FocusScope.of(context).unfocus();
     User? _user = await UserApi.instance.me();
     print(_user);
+    num userId = _user.id;
+    String temp = '$userId';
 // 출력된 정보
 /*
  {id: 2521100750, 
@@ -29,7 +31,7 @@ class _NewMessageState extends State<NewMessage> {
             kakao_account: {profile_nickname_needs_agreement: false, profile_image_needs_agreement: false, profile: {nickname: 민지, thumbnail_image_url: https://k.kakaocdn.net/dn/BPC0J/btrQDcwPw9J/XSKiBhUd7iFkxfOZ6IwnI1/img_110x110.jpg, profile_image_url: https://k.kakaocdn.net/dn/BPC0J/btrQDcwPw9J/XSKiBhUd7iFkxfOZ6IwnI1/img_640x640.jpg, is_default_image: false}}, 
             connected_at: 2022-11-11T08:36:02.000Z}
  */
-    FirebaseFirestore.instance.collection('chat').add({
+    FirebaseFirestore.instance.collection('chat-$temp').add({
       'text': _userEnterMessage,
       'time': Timestamp.now(),
       'userID': _user.id,
