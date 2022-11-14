@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/screens/community/components/store_information.dart';
 import 'package:frontend/screens/community/components/store_list.dart';
 import 'package:frontend/screens/constants.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 
 class StoreDetailBody extends StatefulWidget {
   StoreDetailBody({Key? key}) : super(key: key);
