@@ -11,7 +11,7 @@ class Messages extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: FirebaseFirestore.instance
-          .collection('chats')
+          .collection('chat')
           .orderBy('time', descending: true)
           .snapshots(),
       //최신의 snapshot을 가져오기 위한 절차
@@ -23,17 +23,18 @@ class Messages extends StatelessWidget {
           );
         }
         final chatDocs = snapshot.data!.docs;
+        print(chatDocs);
 
         return ListView.builder(
-          reverse: false,
+          reverse: true,
           itemCount: chatDocs.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(
                   vertical: Get.height * 0.01, horizontal: Get.width * 0.015),
               child: ChatBubble(
-                chatDocs[index]['nickname'],
                 chatDocs[index]['text'],
+                chatDocs[index]['userID'],
               ),
             );
           },

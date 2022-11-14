@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/constants.dart';
 import 'package:frontend/widgets/app_bar.dart';
 
 import 'message.dart';
@@ -22,6 +23,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppbar(""),
+      backgroundColor: kPinkLightColor,
       body: Container(
         alignment: Alignment.topLeft,
         child: Column(
