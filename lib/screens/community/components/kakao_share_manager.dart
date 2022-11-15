@@ -4,7 +4,7 @@ import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_talk.dart';
 
 Future KakaoShareManager(String _address, String _title, String _imageUrl,
-    String _description) async {
+    String _description, String _storeUrl) async {
   final LocationTemplate defaultLocation = LocationTemplate(
     address: _address,
     content: Content(
@@ -12,8 +12,8 @@ Future KakaoShareManager(String _address, String _title, String _imageUrl,
       description: _description,
       imageUrl: Uri.parse(_imageUrl),
       link: Link(
-        webUrl: Uri.parse('https://wheeleasyworld.com'),
-        mobileWebUrl: Uri.parse('https://wheeleasyworld.com'),
+        webUrl: Uri.parse(_storeUrl),
+        mobileWebUrl: Uri.parse(_storeUrl),
       ),
     ),
   );
