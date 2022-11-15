@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/firebase_options.dart';
 import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:frontend/screens/home_screen.dart';
@@ -7,7 +9,11 @@ import 'package:frontend/screens/login_screen.dart';
 import 'package:frontend/screens/navigator.dart';
 import 'package:get/get.dart';
 
-void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
@@ -17,28 +23,50 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      builder: (BuildContext context, Widget? child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'wheel-easy-world',
-          initialRoute: '/navigator',
-          getPages: [
-            GetPage(name: '/', page: () => CommunityScreen()),
-            GetPage(
-              name: '/wheel_home',
-              page: () => HomeScreen(),
-            ),
-            GetPage(
-              name: '/navigator',
-              page: () => HomeNavigator(),
-            )
-          ],
-          theme: ThemeData(
-              //fontFamily: 'Noto_Sans_KR',
-              ),
-        );
+    return FutureBuilder(
+      future: Init.instance.initialize(),
+      builder: (context, AsyncSnapshot snapshot) {
+        // Show splash screen while waiting for app resources to load:
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return ScreenUtilInit(
+            designSize: const Size(375, 812), //iPhone 13 mini
+            builder: (context, child) {
+              return const MaterialApp(
+                debugShowCheckedModeBanner: false,
+                home: SplashScreen(),
+              );
+            },
+          );
+        } else {
+          // Loading is done, return the app:
+          return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            builder: (context, child) {
+              return GetMaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'wheel-easy-world',
+                initialRoute: '/community',
+                getPages: [
+                  GetPage(name: '/', page: () => const LoginScreen()),
+                  GetPage(name: '/mypage', page: () => const MyPageScreen()),
+                  GetPage(
+                      name: '/mypage/request',
+                      page: () => const RequestScreen()),
+                  GetPage(
+                      name: '/mypage/heart', page: () => const HeartScreen()),
+                  GetPage(name: '/community', page: () => CommunityScreen()),
+                  GetPage(
+                    name: '/store_detail',
+                    page: () => StoreDetailScreen(),
+                  ),
+                ],
+                theme: ThemeData(
+                  fontFamily: 'Noto_Sans_KR',
+                ),
+              );
+            },
+          );
+        }
       },
     );
   }

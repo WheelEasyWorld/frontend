@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend/screens/community/components/kakao_share_manager.dart';
 import 'package:frontend/screens/constants.dart';
 
 class StoreInformation extends StatefulWidget {
@@ -10,6 +11,8 @@ class StoreInformation extends StatefulWidget {
 }
 
 class _StoreInformationState extends State<StoreInformation> {
+  int like_count = 4;
+  bool like_value = true;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -91,11 +94,26 @@ class _StoreInformationState extends State<StoreInformation> {
             children: [
               InkWell(
                 splashColor: Colors.transparent,
-                child: Icon(
-                  Icons.favorite_border_rounded,
-                  size: 18.h,
-                ),
-                onTap: () {},
+                child: like_value
+                    ? Icon(
+                        Icons.favorite_border_rounded,
+                        size: 18.h,
+                      )
+                    : Icon(
+                        Icons.favorite_rounded,
+                        size: 18.h,
+                        color: Color.fromARGB(255, 255, 26, 45),
+                      ),
+                onTap: () {
+                  setState(() {
+                    if (like_value == true) {
+                      like_count += 1;
+                    } else {
+                      like_count -= 1;
+                    }
+                    like_value = !like_value;
+                  });
+                },
               ),
               Row(
                 children: [
@@ -108,7 +126,7 @@ class _StoreInformationState extends State<StoreInformation> {
                     width: 7.w,
                   ),
                   Text(
-                    '0',
+                    like_count.toString(),
                     style: TextStyle(
                         fontSize: 12, color: Color.fromARGB(100, 0, 0, 0)),
                   )
@@ -125,7 +143,13 @@ class _StoreInformationState extends State<StoreInformation> {
                   Icons.share_rounded,
                   size: 18.h,
                 ),
-                onTap: () {},
+                onTap: () {
+                  KakaoShareManager(
+                      "대구 중구 문우관길 25 1층",
+                      "츠바키노하나",
+                      "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/detail01.png?raw=true",
+                      "1층 / 문턱있음 / 경사로 / 테이블석 / 엘리베이터 / 장애인화장실");
+                },
               ),
               Text(
                 '공유하기',

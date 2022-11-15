@@ -45,3 +45,4 @@ app.*.map.json
 
 # API_KEY
 .env
+lib/firebase_options.dart
