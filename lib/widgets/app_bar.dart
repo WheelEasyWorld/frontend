@@ -27,5 +27,6 @@ PreferredSizeWidget buildAppbar(String label) {
         fontWeight: FontWeight.w700,
       ),
     ),
+    centerTitle: true,
   );
 }

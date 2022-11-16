@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/community/components/community_appbar.dart';
 import 'package:frontend/screens/community/components/store_detail_body.dart';
 import 'package:frontend/screens/constants.dart';
+import 'package:frontend/widgets/app_bar.dart';
 
 class StoreDetailScreen extends StatefulWidget {
   StoreDetailScreen({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommunityAppbar(),
+      appBar: buildAppbar("Can Go 커뮤니티"),
       body: StoreDetailBody(),
     );
   }
