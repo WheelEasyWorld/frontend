@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.frontend">
+    <uses-permission     android:name="android.permission.ACCESS_FINE_LOCATION"/>
    <application
         android:label="frontend"
         android:name="${applicationName}"
@@ -7,7 +8,7 @@
          <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="2zcoa3w2jy" />
-        <activity 
+        <!-- <activity 
             android:name="com.kakao.sdk.flutter.AuthCodeCustomTabsActivity"
             android:exported="true">
             <intent-filter android:label="flutter_web_auth">
@@ -15,10 +16,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <!-- Redirect URI, "kakao${YOUR_NATIVE_APP_KEY}://oauth" 형식 -->
+                Redirect URI, "kakao${YOUR_NATIVE_APP_KEY}://oauth" 형식
                 <data android:scheme="kakao${YOUR_NATIVE_APP_KEY}" android:host="oauth"/>
             </intent-filter>
-        </activity>
+        </activity> -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
