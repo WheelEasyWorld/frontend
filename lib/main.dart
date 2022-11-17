@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/firebase_options.dart';
 import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
+import 'package:frontend/screens/manager-page/manager_home_screen.dart';
+import 'package:frontend/screens/manager-page/time_table_screen.dart';
 import 'package:get/get.dart';
 import 'package:frontend/screens/login_screen.dart';
 import 'package:frontend/screens/mypage/heart_screen.dart';
@@ -58,7 +60,7 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/community',
+                initialRoute: '/time_table',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
                   GetPage(name: '/mypage', page: () => const MyPageScreen()),
@@ -72,6 +74,9 @@ class MyApp extends StatelessWidget {
                     name: '/store_detail',
                     page: () => StoreDetailScreen(),
                   ),
+                  GetPage(
+                      name: '/manager_home', page: () => ManagerHomeScreen()),
+                  GetPage(name: '/time_table', page: () => TimeTableScreen()),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',
