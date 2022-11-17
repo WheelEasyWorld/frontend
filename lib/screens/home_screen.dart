@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Image.asset(
                         'assets/images/weather.png',
-                        width: 250.w,
+                        width: 230.w,
                         fit: BoxFit.fill,
                       ),
                       SizedBox(
@@ -53,12 +53,27 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 70.h,
                       ),
-                      Image.asset(
-                        'assets/images/home_message.png',
-                        width: 290.w,
-                        // height: 57.h,
-                        fit: BoxFit.fill,
-                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Stack(children: [
+                          Image.asset(
+                            'assets/images/home_message.png',
+                            width: 290.w,
+                            // height: 57.h,
+                            fit: BoxFit.fill,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(8.5, 10, 0, 0),
+                            child: Text(
+                              '안녕하세요 김민지님!\n오늘은 어디로 가시나요? :)\n궁금한게 있으면 언제든지 저에게 물어보세요!',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          )
+                        ]),
+                      )
                     ],
                   )), // Foreground widget here
             ],

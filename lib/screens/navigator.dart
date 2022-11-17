@@ -6,7 +6,6 @@ import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:frontend/screens/constants.dart';
 import 'package:frontend/screens/home_screen.dart';
 import 'package:frontend/screens/map/map.dart';
-import 'package:frontend/screens/map/map_main.dart';
 import 'package:frontend/screens/mypage/mypage_screen.dart';
 import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -25,7 +24,9 @@ class _HomeNavigator extends State<HomeNavigator> {
   List<Widget> _showScreen() {
     return [
       const HomeScreen(),
-      NaverMap(),
+      MarkerMapPage(),
+      // MapScreen(),
+      // NaverMap(),
       CommunityScreen(),
       // const HomeScsreen(),
       MyPageScreen(),

@@ -5,7 +5,7 @@ import 'package:frontend/firebase_options.dart';
 import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:frontend/screens/home_screen.dart';
-import 'package:frontend/screens/map/map_main.dart';
+import 'package:frontend/screens/map/map.dart';
 import 'package:frontend/screens/navigator.dart';
 import 'package:get/get.dart';
 import 'package:frontend/screens/login_screen.dart';
@@ -65,7 +65,8 @@ class MyApp extends StatelessWidget {
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
                   GetPage(name: '/home_screen', page: () => HomeScreen()),
-                  GetPage(name: '/map_screen', page: () => NaverMap()),
+                  // GetPage(name: '/map_screen', page: () => NaverMap()),
+                  GetPage(name: '/map_screen', page: () => MarkerMapPage()),
                   GetPage(name: '/navigator', page: () => HomeNavigator()),
                   GetPage(name: '/mypage', page: () => const MyPageScreen()),
                   GetPage(
