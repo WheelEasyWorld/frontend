@@ -61,19 +61,41 @@ class _MessageContainer extends StatelessWidget {
               return _CardContainer(card: message.card!);
             case MessageType.text:
             default:
-              return Container(
-                decoration: BoxDecoration(
-                  color: isUserMessage ? kYellowColor : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  message.text?.text?[0] ?? '',
-                  style: TextStyle(
-                    color: isUserMessage ? Colors.white : Colors.black,
-                  ),
-                ),
-              );
+              return isUserMessage
+                  ? Container(
+                      decoration: BoxDecoration(
+                        color: isUserMessage ? kYellowColor : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        message.text?.text?[0] ?? '',
+                        style: const TextStyle(color: Colors.white),
+                      ))
+                  : Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/wheely.png',
+                          width: 200,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                            decoration: BoxDecoration(
+                              color:
+                                  isUserMessage ? kYellowColor : Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            padding: const EdgeInsets.all(10),
+                            child: Text(
+                              message.text?.text?[0] ?? '',
+                              style: const TextStyle(
+                                color: Colors.black,
+                              ),
+                            )),
+                      ],
+                    );
           }
         },
       ),

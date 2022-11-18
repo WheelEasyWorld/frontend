@@ -86,6 +86,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   Expanded(
                     child: TextFormField(
                       controller: _controller,
+                      cursorColor: kCoralColor,
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           enabledBorder: OutlineInputBorder(
@@ -94,11 +95,20 @@ class _ChatScreenState extends State<ChatScreen> {
                               borderSide: BorderSide(
                                 color: Colors.grey.withOpacity(0.1),
                               )),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(20)),
+                              borderSide: BorderSide(
+                                color: Colors.grey.withOpacity(0.1),
+                              )),
                           filled: true,
                           fillColor: Colors.grey.withOpacity(0.1),
+                          floatingLabelStyle:
+                              const TextStyle(color: kCoralColor),
                           labelText: 'Type here...',
                           hintStyle: const TextStyle(color: kCoralColor),
-                          suffixIcon: const Icon(Icons.add_a_photo_outlined)),
+                          suffixIcon: const Icon(Icons.add_a_photo_outlined,
+                              color: kCoralColor)),
                       // onChanged: (value) {
                       //   setState(() {
                       //     _userEnterMessage = value;
