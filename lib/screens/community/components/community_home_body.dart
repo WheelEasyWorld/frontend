@@ -126,7 +126,7 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
           ),
           Text(
             '가까운 장소',
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
           ),
           SizedBox(
             height: 30.h,
