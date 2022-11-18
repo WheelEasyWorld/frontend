@@ -249,7 +249,7 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
 
   _controlPanel() {
     return Container(
-      color: Color.fromRGBO(255, 255, 255, 1),
+      color: Color.fromRGBO(255, 255, 255, 0),
       padding: EdgeInsets.all(16),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

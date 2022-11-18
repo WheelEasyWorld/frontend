@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/screens/community/community_screen.dart';
-import 'package:frontend/screens/community/components/community_appbar.dart';
 import 'package:frontend/screens/community/components/community_home_body.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:frontend/screens/constants.dart';

@@ -148,7 +148,8 @@ class _StoreInformationState extends State<StoreInformation> {
                       "대구 중구 문우관길 25 1층",
                       "츠바키노하나",
                       "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/detail01.png?raw=true",
-                      "1층 / 문턱있음 / 경사로 / 테이블석 / 엘리베이터 / 장애인화장실");
+                      "1층 / 문턱있음 / 경사로 / 테이블석 / 엘리베이터 / 장애인화장실",
+                      "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%B8%A0%EB%B0%94%ED%82%A4%EB%85%B8%ED%95%98%EB%82%98");
                 },
               ),
               Text(
