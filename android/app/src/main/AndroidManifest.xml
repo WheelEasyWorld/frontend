@@ -8,7 +8,10 @@
          <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="2zcoa3w2jy" />
+<<<<<<< HEAD
     
+=======
+>>>>>>> bd90d19a10c2cbc892fffccf5a7a993802863b1b
         <activity
             android:name=".MainActivity"
             android:exported="true"
