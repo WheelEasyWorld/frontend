@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/firebase_options.dart';
+import 'package:frontend/screens/chat-bot/chat_screen.dart';
 import 'package:frontend/screens/community/community_screen.dart';
 import 'package:frontend/screens/community/store_detail_screen.dart';
 import 'package:frontend/screens/manager-page/manager_home_screen.dart';
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
               return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'wheel-easy-world',
-                initialRoute: '/time_table',
+                initialRoute: '/',
                 getPages: [
                   GetPage(name: '/', page: () => const LoginScreen()),
                   GetPage(name: '/mypage', page: () => const MyPageScreen()),
@@ -77,6 +78,7 @@ class MyApp extends StatelessWidget {
                   GetPage(
                       name: '/manager_home', page: () => ManagerHomeScreen()),
                   GetPage(name: '/time_table', page: () => TimeTableScreen()),
+                  GetPage(name: '/chat_screen', page: () => const ChatScreen()),
                 ],
                 theme: ThemeData(
                   fontFamily: 'Noto_Sans_KR',
