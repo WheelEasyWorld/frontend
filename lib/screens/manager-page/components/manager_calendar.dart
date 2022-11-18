@@ -21,11 +21,15 @@ class _ManagerCalendarState extends State<ManagerCalendar> {
   DateTime focusedDay = DateTime.now();
 
   Map<DateTime, List<Event>> events = {
-    DateTime.utc(2022, 11, 1): [
+    DateTime.utc(2022, 11, 4): [
       Event('김민지님의 민원'),
       Event('김은하님의 민원'),
     ],
     DateTime.utc(2022, 11, 10): [
+      Event('김민지님의 민원'),
+    ],
+    DateTime.utc(2022, 11, 14): [
+      Event('김은하님의 민원'),
       Event('이세은님의 민원'),
     ],
   };

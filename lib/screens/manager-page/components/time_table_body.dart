@@ -23,7 +23,7 @@ class _TimeTableBodyState extends State<TimeTableBody> {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           Text(
-            '01 November 2022, Tuesday',
+            '04 November 2022, Tuesday',
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
@@ -40,13 +40,12 @@ class _TimeTableBodyState extends State<TimeTableBody> {
           SizedBox(
             height: 60.h,
           ),
-          _TimeDetail(
-              "07:45", Color(0xFFE9EAF4), "보도블럭 불량", "대구광역시 중구 동성로2가 160-1"),
+          _TimeDetail("09:41", Color(0xFFE9EAF4), "도로 이용 불편 민원",
+              "대구광역시 중구 동성로2가 160-1"),
           SizedBox(
             height: 30.h,
           ),
-          _TimeDetail("13:13", Color(0xFFFFEEEA), "휠체어가 다니기 좁은 인도",
-              "대구광역시 중구 성내1동 68-1")
+          _TimeDetail("13:13", Color(0xFFFFEEEA), "거리 환경 개선 민원", "대구 북구 칠성동 1가")
         ],
       ),
     );
