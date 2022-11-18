@@ -140,14 +140,12 @@ class _StoreListState extends State<StoreList> {
                                               .storeList[index]["address"]!;
                                           String _title =
                                               widget.storeList[index]["title"]!;
-                                          String _url =
-                                              widget.storeList[index]["url"]!;
-                                          KakaoShareManager(
-                                              _address,
-                                              widget.storeList[index]["title"]!,
-                                              widget.storeList[index]["url"]!,
-                                              widget.storeList[index]
-                                                  ["address"]!);
+                                          String _imageurl = widget
+                                              .storeList[index]["imageurl"]!;
+                                          String _siteurl = widget
+                                              .storeList[index]["siteurl"]!;
+                                          KakaoShareManager(_address, _title,
+                                              _imageurl, _address, _siteurl);
                                         },
                                       ),
                                     ],
