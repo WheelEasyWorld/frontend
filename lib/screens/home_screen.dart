@@ -45,10 +45,14 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 80.h,
                       ),
-                      Image.asset(
-                        'assets/images/character_tire.png',
-                        width: 230.w,
-                        fit: BoxFit.fill,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        child: Image.asset(
+                          'assets/images/wheely.png',
+                          width: 230.w,
+                          fit: BoxFit.fill,
+                        ),
+                        onTap: () => Get.toNamed('/chat_screen'),
                       ),
                       SizedBox(
                         height: 70.h,
