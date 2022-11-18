@@ -2,16 +2,16 @@ Map<String, dynamic> data = {
   "request": [
     {
       "type": "도로 이용 불편 민원",
-      "address": "대구 북구 경대로 7길 2-11",
+      "address": "대구광역시 중구 동성로2가 160-1",
       "status": "처리중",
-      "detail": "일주일 전 도로 공사 완료 후 남은 잔재가 아직 처리 되지 않아 도로가 엉망입니다.",
+      "detail": "보도블럭이 울퉁불퉁해서 위험합니다.",
       "date": "2022.11.04. 09:41",
     },
     {
       "type": "거리 환경 개선 민원",
-      "address": "대구 북구 칠성동1가",
+      "address": "대구광역시 중구 성내1동 68-1",
       "status": "완료",
-      "detail": "장애인 전용 도로가 없어서 올라갈 수가 없었습니다.",
+      "detail": "턱이 너무 높아 휠체어가 올라가기에 너무 힘들었습니다",
       "date": "2022.10.11. 17:10",
     },
     {
@@ -24,28 +24,28 @@ Map<String, dynamic> data = {
   ],
   "heart": [
     {
-      "name": "츠바키노하나",
-      "address": "대구 중구 문우관길 25 1층",
-      "img": "assets/images/food/food-1.png",
-      "facility": [
-        "1층",
-        "경사로",
-        "문턱있음",
-        "테이블석",
-        "엘리베이터",
-        "장애인화장실"
-      ],
+      "images": "assets/images/store02.png",
+      "imageurl":
+          "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/store02.png?raw=true",
+      "title": "도마29",
+      "address": "대구 중구 동성로1길 46-2",
+      "distance": "347m",
+      "like": "true",
+      "infonum": "1",
+      "siteurl":
+          "https://search.naver.com/search.naver?sm=tab_sug.top&where=nexearch&query=%EB%8C%80%EA%B5%AC+%EB%8F%99%EC%84%B1%EB%A1%9C+%EB%8F%84%EB%A7%8829&oquery=%EB%8F%84%EB%A7%8829&tqi=h3n5rdp0J1sss7fygYwssssssD8-245184&acq=%EB%8F%84%EB%A7%8829&acr=2&qdt=0",
     },
     {
-      "name": "사야까",
-      "address": "대구 중구 국채보상로125길 4 1층",
-      "img": "assets/images/food/food-2.png",
-      "facility": [
-        "1층",
-        "경사로",
-        "문턱있음",
-        "테이블석",
-      ],
-    },
+        "images": "assets/images/detail01.png",
+        "imageurl":
+            "https://github.com/WheelEasyWorld/frontend/blob/feature/community/assets/images/detail01.png?raw=true",
+        "title": "츠바키노하나",
+        "address": "대구 중구 문우관길 25 1층",
+        "distance": "708m",
+        "like": "true",
+        "infonum": "0",
+        "siteurl":
+            "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%B8%A0%EB%B0%94%ED%82%A4%EB%85%B8%ED%95%98%EB%82%98",
+      },
   ]
 };

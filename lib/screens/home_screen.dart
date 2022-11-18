@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.fromLTRB(0, 65.w, 0, 15.w),
-                width: 100.w,
+                width: 120.w,
                 alignment: Alignment.centerLeft,
                 child: Image.asset('assets/images/logo.png'),
               ),

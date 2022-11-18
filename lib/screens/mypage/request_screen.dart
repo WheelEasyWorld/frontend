@@ -10,19 +10,21 @@ class RequestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppbar("민원 모아보기"),
+      appBar: buildAppbar("민원 모아보기", true),
       body: SafeArea(
         child: ListView.builder(
           padding: EdgeInsets.all(15.w),
           itemCount: data["request"].length,
           itemBuilder: (context, index) {
-            return Card(
-              elevation: 3,
-              margin: EdgeInsets.only(bottom: 15.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
+            return Container(
+              margin: EdgeInsets.only(bottom: 10.h),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: kGreyColor,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
-              color: Colors.grey.shade100,
               child: Padding(
                 padding: EdgeInsets.all(10.w),
                 child: Column(
@@ -40,7 +42,7 @@ class RequestScreen extends StatelessWidget {
                         ),
                         Container(
                           width: 60.w,
-                          height: 22.h,
+                          height: 25.h,
                           decoration: BoxDecoration(
                             color: (data["request"][index]["status"] == "처리중")
                                 ? kPinkColor
@@ -52,7 +54,7 @@ class RequestScreen extends StatelessWidget {
                             child: Text(
                               data["request"][index]["status"] ?? "status",
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 12.sp),
+                                  color: Colors.white, fontSize: 13.sp),
                             ),
                           ),
                         ),

@@ -60,7 +60,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppbar(""),
+      appBar: buildAppbar("", true),
       backgroundColor: kPinkLightColor,
       // body: Container(
       //   alignment: Alignment.topLeft,

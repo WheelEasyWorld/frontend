@@ -70,7 +70,8 @@ class _StoreListState extends State<StoreList> {
                               Text(
                                 widget.storeList[index]["title"]!,
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.bold),
                               ),
                               SizedBox(
                                 height: 5.h,
@@ -78,7 +79,7 @@ class _StoreListState extends State<StoreList> {
                               Text(
                                 widget.storeList[index]["address"]!,
                                 style: TextStyle(
-                                  fontSize: 10,
+                                  fontSize: 12.sp,
                                 ),
                               ),
                               Column(
@@ -88,7 +89,7 @@ class _StoreListState extends State<StoreList> {
                                   Text(
                                     widget.storeList[index]["distance"]!,
                                     style: TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 11.sp,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
@@ -103,14 +104,14 @@ class _StoreListState extends State<StoreList> {
                                                     ["like"] ==
                                                 "true"
                                             ? Icon(
-                                                Icons.favorite_border_rounded,
-                                                size: 18.h,
-                                              )
-                                            : Icon(
                                                 Icons.favorite_rounded,
                                                 size: 18.h,
                                                 color: Color.fromARGB(
                                                     255, 255, 26, 45),
+                                              )
+                                            : Icon(
+                                                Icons.favorite_border_rounded,
+                                                size: 18.h,
                                               ),
                                         onTap: () {
                                           setState(() {

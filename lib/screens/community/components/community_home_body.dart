@@ -38,7 +38,7 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
         "title": "수야",
         "address": "대구 중구 동성로3길 32-37",
         "distance": "563m",
-        "like": "true",
+        "like": "false",
         "infonum": "2",
         "siteurl":
             "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%8F%99%EC%84%B1%EB%A1%9C+%EC%88%98%EC%95%BC&oquery=%EC%88%98%EC%95%BC&tqi=h3n5%2FwprvTossnoQ1J8ssssstOC-034582",
@@ -62,7 +62,7 @@ class _CommunityHomeBodyState extends State<CommunityHomeBody> {
         "title": "사야까",
         "address": "대구 중구 국채보상로125길 4 1층",
         "distance": "765m",
-        "like": "true",
+        "like": "false",
         "infonum": "2",
         "siteurl":
             "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EC%82%AC%EC%95%BC%EA%B9%8C&oquery=%EB%8F%99%EC%84%B1%EB%A1%9C+%EC%88%98%EC%95%BC&tqi=h3n6tdprvTossnhJaLNssssssP8-500472",

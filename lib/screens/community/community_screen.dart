@@ -15,7 +15,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppbar("Can Go 커뮤니티"),
+      appBar: buildAppbar("Can Go 착한가게", false),
       body: CommunityHomeBody(),
     );
   }
