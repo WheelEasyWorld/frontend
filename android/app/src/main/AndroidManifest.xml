@@ -8,10 +8,7 @@
          <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="2zcoa3w2jy" />
-<<<<<<< HEAD
     
-=======
->>>>>>> bd90d19a10c2cbc892fffccf5a7a993802863b1b
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -39,7 +36,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!-- <data android:scheme="kakao${NATIVE_APP_KEY}" android:host="oauth"/> -->
+                <data android:scheme="c3e7c390eeda90c6d0f53d95b6c338d2" android:host="oauth"/>
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

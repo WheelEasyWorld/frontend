@@ -32,12 +32,15 @@ class CategoryButton extends StatelessWidget {
             width: 2,
             color: num == selectedCategoryNum ? kCoralColor : kGreyColor,
           ),
+          color: num == selectedCategoryNum ? kCoralColor : kGreyColor,
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
         child: Text(
           title,
           style: TextStyle(
-              fontSize: 12, color: Colors.black, fontWeight: FontWeight.w500),
+              fontSize: 12,
+              color: num == selectedCategoryNum ? Colors.white : Colors.black,
+              fontWeight: FontWeight.w500),
         ),
       ),
     );

@@ -18,12 +18,48 @@ class MarkerMapPage extends StatefulWidget {
 
 class _MarkerMapPageState extends State<MarkerMapPage> {
   static const MODE_CHARGE = 0xF1;
-  static const MODE_BORROW = 0xF2;
-  static const MODE_COMPLAINT = 0xF3;
+  static const MODE_RESTAU = 0xF2;
+  static const MODE_PHARMA = 0xF3;
+  static const MODE_COMPLAINT = 0xF5;
   int _currentMode = MODE_CHARGE;
 
   Completer<NaverMapController> _controller = Completer();
   List<CustomMarker> _markers = [];
+  String _option = '🍴 음식점';
+  final List<String> _optionList = [
+    '🍴 음식점',
+    '🏪 편의점',
+    '💊 약국',
+    '☕️ 카페',
+    '🏥 병원',
+    '🏬 마트',
+    '🏦 은행',
+    '🏣 우체국'
+  ];
+  static final List<StoreType> myRestaurant = [
+    Borrow(
+      phoneNumber: "010-5682-6157",
+      address: "대구광역시 중구 문우관길 25 1층",
+      detailInfo: "일요일 휴무",
+      uid: "b1",
+      time: "18:00 - 22:00",
+      storeName: "츠바키노하나",
+      location: LocationClass(
+          latitude: 35.864656274004936, longitude: 128.59036705521285),
+    ),
+  ];
+  static final List<StoreType> myPharmacy = [
+    Borrow(
+      phoneNumber: "053-425-5575",
+      address: "대구광역시 중구 중앙대로386-1",
+      detailInfo: "토, 일요일 휴무",
+      uid: "b1",
+      time: "09:00 - 21:00",
+      storeName: "한성약국",
+      location: LocationClass(
+          latitude: 35.86776017532598, longitude: 128.5934891460874),
+    ),
+  ];
   static final List<StoreType> mycomplaint = [
     Complaint(
       phoneNumber: " - ",
@@ -254,6 +290,75 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          // 착한가게 리스트
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(60),
+                  border: Border.all(
+                    color: kStrongYellowColor,
+                  )),
+              height: 40,
+              padding: EdgeInsets.all(8),
+              margin: EdgeInsets.only(right: 8),
+              child: GestureDetector(
+                onTap: () => setState(() => {
+                      _currentMode = MODE_RESTAU,
+                      _markers.clear(),
+                    }),
+                child: ButtonTheme(
+                  alignedDropdown: true,
+                  focusColor: kStrongYellowColor,
+                  child: DropdownButton<String>(
+                      value: _option,
+                      focusColor: kStrongYellowColor,
+                      items: _optionList.map((String value) {
+                        return DropdownMenuItem<String>(
+                            value: value, child: Text(value));
+                      }).toList(),
+                      onChanged: ((String? value) {
+                        setState(() {
+                          _option = value!;
+                          if (_option == "🍴 음식점") {
+                            _currentMode = MODE_RESTAU;
+                            _markers.clear();
+                            for (int i = 0; i < myRestaurant.length; i++) {
+                              _markers.add(CustomMarker(
+                                store: myRestaurant[i],
+                                position: myRestaurant[i].location,
+                              ));
+                            }
+                          } else if (_option == "💊 약국") {
+                            _currentMode = MODE_PHARMA;
+                            _markers.clear();
+                            for (int i = 0; i < myPharmacy.length; i++) {
+                              _markers.add(CustomMarker(
+                                store: myPharmacy[i],
+                                position: myPharmacy[i].location,
+                              ));
+                            }
+                          } else {
+                            _markers.clear();
+                          }
+                        });
+                      }),
+                      icon: Icon(Icons.arrow_drop_down_rounded),
+                      iconEnabledColor: kStrongYellowColor,
+                      isExpanded: true,
+                      borderRadius: BorderRadius.circular(20),
+                      underline: Container(),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                      )
+
+                      //dropdownColor: Colors.white,
+                      ),
+                ),
+              ),
+            ),
+          ),
           // 충전기 대여 장소
           Expanded(
             child: GestureDetector(
@@ -273,7 +378,7 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
                     color: _currentMode == MODE_CHARGE
                         ? kBrownColor
                         : Colors.white,
-                    borderRadius: BorderRadius.circular(60),
+                    borderRadius: BorderRadius.circular(50),
                     border: Border.all(color: kBrownColor)),
                 padding: EdgeInsets.all(8),
                 margin: EdgeInsets.only(right: 8),
@@ -284,43 +389,6 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
                     color: _currentMode == MODE_CHARGE
                         ? Colors.white
                         : kBrownColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          // 휠체어 대여할 수 있는 장소
-          Expanded(
-            child: GestureDetector(
-              onTap: () => setState(() => {
-                    _currentMode = MODE_BORROW,
-                    _markers.clear(),
-                    for (int i = 0; i < myborrow.length; i++)
-                      {
-                        _markers.add(CustomMarker(
-                          store: myborrow[i],
-                          position: myborrow[i].location,
-                        ))
-                      }
-                  }),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: _currentMode == MODE_BORROW
-                        ? kStrongYellowColor
-                        : Colors.white,
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(color: kStrongYellowColor)),
-                padding: EdgeInsets.all(8),
-                margin: EdgeInsets.only(right: 8),
-                child: Text(
-                  '🦽 휠체어 대여',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: _currentMode == MODE_BORROW
-                        ? Colors.white
-                        : kStrongYellowColor,
                     fontWeight: FontWeight.w600,
                     fontSize: 14,
                   ),
@@ -350,7 +418,6 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(color: kCoralColor)),
                 padding: EdgeInsets.all(8),
-                margin: EdgeInsets.only(right: 8),
                 child: Text(
                   '⛔️ 민원 발생',
                   textAlign: TextAlign.center,
