@@ -10,7 +10,7 @@ class RequestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppbar("민원 모아보기"),
+      appBar: buildAppbar("민원 모아보기", true),
       body: SafeArea(
         child: ListView.builder(
           padding: EdgeInsets.all(15.w),

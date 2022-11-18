@@ -96,20 +96,20 @@ class _StoreInformationState extends State<StoreInformation> {
                 splashColor: Colors.transparent,
                 child: like_value
                     ? Icon(
-                        Icons.favorite_border_rounded,
-                        size: 18.h,
-                      )
-                    : Icon(
                         Icons.favorite_rounded,
                         size: 18.h,
                         color: Color.fromARGB(255, 255, 26, 45),
+                      )
+                    : Icon(
+                        Icons.favorite_border_rounded,
+                        size: 18.h,
                       ),
                 onTap: () {
                   setState(() {
                     if (like_value == true) {
-                      like_count += 1;
-                    } else {
                       like_count -= 1;
+                    } else {
+                      like_count += 1;
                     }
                     like_value = !like_value;
                   });

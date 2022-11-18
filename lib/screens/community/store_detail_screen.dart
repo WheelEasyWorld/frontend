@@ -14,7 +14,7 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppbar("Can Go 커뮤니티"),
+      appBar: buildAppbar("Can Go 착한가게", true),
       body: StoreDetailBody(),
     );
   }

@@ -127,7 +127,7 @@ List<Widget> buildHeart() {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.r),
                 child: Image.asset(
-                  data["heart"][i]["img"],
+                  data["heart"][i]["images"],
                   width: 88.w,
                   height: 50.h,
                   fit: BoxFit.fill,
@@ -144,7 +144,7 @@ List<Widget> buildHeart() {
                   ),
                   Flexible(
                     child: Text(
-                      data["heart"][i]["name"],
+                      data["heart"][i]["title"],
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       textAlign: TextAlign.right,

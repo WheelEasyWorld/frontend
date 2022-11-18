@@ -104,14 +104,14 @@ class _StoreListState extends State<StoreList> {
                                                     ["like"] ==
                                                 "true"
                                             ? Icon(
-                                                Icons.favorite_border_rounded,
-                                                size: 18.h,
-                                              )
-                                            : Icon(
                                                 Icons.favorite_rounded,
                                                 size: 18.h,
                                                 color: Color.fromARGB(
                                                     255, 255, 26, 45),
+                                              )
+                                            : Icon(
+                                                Icons.favorite_border_rounded,
+                                                size: 18.h,
                                               ),
                                         onTap: () {
                                           setState(() {

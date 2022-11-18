@@ -82,7 +82,6 @@ flutter:
     - assets/
     - assets/images/
     - assets/images/sns/
-    - assets/images/food/
     - .env
     - assets/models/
 
