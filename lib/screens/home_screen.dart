@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.fromLTRB(0, 65.w, 0, 15.w),
-                width: 100.w,
+                width: 120.w,
                 alignment: Alignment.centerLeft,
                 child: Image.asset('assets/images/logo.png'),
               ),
@@ -72,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                               '안녕하세요 김민지님!\n오늘은 어디로 가시나요? :)\n궁금한게 있으면 언제든지 저에게 물어보세요!',
                               style: TextStyle(
                                 fontSize: 15,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           )

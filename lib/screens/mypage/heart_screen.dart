@@ -16,12 +16,15 @@ class HeartScreen extends StatelessWidget {
           padding: EdgeInsets.all(15.w),
           itemCount: data["heart"].length,
           itemBuilder: (context, index) {
-            return Card(
-              elevation: 3,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
+            return Container(
+              margin: EdgeInsets.only(bottom: 10.h),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  width: 2,
+                  color: kGreyColor,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
-              color: Colors.grey.shade100,
               child: Padding(
                 padding: EdgeInsets.all(15.w),
                 child: Column(
@@ -58,7 +61,7 @@ class HeartScreen extends StatelessWidget {
                           onPressed: () {},
                           icon: Icon(
                             Icons.favorite_rounded,
-                            color: kPinkColor,
+                            color: Colors.red,
                             size: 22.h,
                           ),
                         ),
