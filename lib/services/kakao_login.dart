@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/chat-bot/components/chat.dart';
+import 'package:frontend/screens/chat-bot/chat_screen.dart';
 import 'package:get/get.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_talk.dart';
 

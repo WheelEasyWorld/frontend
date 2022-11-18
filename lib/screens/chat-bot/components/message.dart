@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 class Messages extends StatelessWidget {
   const Messages(this.userId, {super.key});
+
   final num userId;
   @override
   Widget build(BuildContext context) {
