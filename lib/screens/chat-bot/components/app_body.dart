@@ -23,9 +23,7 @@ class AppBody extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             _MessageContainer(
-              message: message,
-              isUserMessage: isUserMessage,
-            ),
+                message: message, isUserMessage: isUserMessage, index: i),
           ],
         );
       },
@@ -43,15 +41,18 @@ class AppBody extends StatelessWidget {
 class _MessageContainer extends StatelessWidget {
   final Message message;
   final bool isUserMessage;
+  final num index;
 
   const _MessageContainer({
     Key? key,
     required this.message,
+    required this.index,
     this.isUserMessage = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print(index);
     return Container(
       constraints: BoxConstraints(maxWidth: 250),
       child: LayoutBuilder(
@@ -74,10 +75,14 @@ class _MessageContainer extends StatelessWidget {
                       ))
                   : Column(
                       children: [
-                        Image.asset(
-                          'assets/images/wheely.png',
-                          width: 200,
-                        ),
+                        index == 0
+                            ? Image.asset(
+                                'assets/images/wheely.png',
+                                width: 200,
+                              )
+                            : const SizedBox(
+                                height: 5,
+                              ),
                         const SizedBox(
                           height: 10,
                         ),
