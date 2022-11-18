@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frontend/services/kakao_login.dart';
 import 'package:frontend/widgets/sns_button.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_talk.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -59,6 +60,8 @@ Future kakaoLogin() async {
     try {
       await UserApi.instance.loginWithKakaoTalk();
       debugPrint('카카오톡으로 로그인 성공');
+      //홈으로 이동
+      Get.toNamed('/navigator');
     } catch (error) {
       debugPrint('카카오톡으로 로그인 실패 $error');
 
@@ -71,6 +74,8 @@ Future kakaoLogin() async {
       try {
         await UserApi.instance.loginWithKakaoAccount();
         debugPrint('카카오계정으로 로그인 성공');
+        //홈으로 이동
+        Get.toNamed('/navigator');
       } catch (error) {
         debugPrint('카카오계정으로 로그인 실패 $error');
       }
@@ -79,6 +84,8 @@ Future kakaoLogin() async {
     try {
       await UserApi.instance.loginWithKakaoAccount();
       debugPrint('카카오계정으로 로그인 성공');
+      //홈으로 이동
+      Get.toNamed('/navigator');
     } catch (error) {
       debugPrint('카카오계정으로 로그인 실패 $error');
     }
