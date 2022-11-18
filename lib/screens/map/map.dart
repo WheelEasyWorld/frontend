@@ -31,27 +31,27 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
       detailInfo: "보도블럭이 울퉁불퉁해서 위험합니다.",
       uid: "p1",
       time: " - ",
-      storeName: "보도블럭 불량",
+      storeName: "도로 이용 불편 민원",
       location: LocationClass(
           latitude: 35.8691219296831, longitude: 128.59556896573935),
     ),
     Complaint(
       phoneNumber: " - ",
       address: "대구광역시 중구 성내1동 68-1",
-      detailInfo: "휠체어가 한 대가 겨우 지나갈 수 있는 너비 입니다",
+      detailInfo: "턱이 너무 높아 휠체어가 올라가기에 너무 힘들었습니다.",
       uid: "p2",
       time: " - ",
-      storeName: "휠체어가 다니기 좁은 인도",
+      storeName: "거리 환경 개선 민원",
       location: LocationClass(
           latitude: 35.86968394543123, longitude: 128.59721599468156),
     ),
     Complaint(
       phoneNumber: " - ",
-      address: "대구광역시 대봉동",
-      detailInfo: "휠체어가 한 대가 겨우 지나갈 수 있는 너비 입니다",
+      address: "대구광역시 중구 대봉1동",
+      detailInfo: "휠체어가 한 대가 겨우 지나갈 수 있는 너비 입니다.",
       uid: "p3",
       time: " - ",
-      storeName: "휠체어가 다니기 좁은 인도",
+      storeName: "거리 환경 개선 민원",
       location: LocationClass(
           latitude: 35.85996920622018, longitude: 128.60741412664407),
     ),
@@ -249,7 +249,6 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
 
   _controlPanel() {
     return Container(
-      color: Color.fromRGBO(255, 255, 255, 1),
       padding: EdgeInsets.all(16),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -388,18 +387,12 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
   }
 
   _naverMap() {
-    return Expanded(
-      child: Stack(
-        children: <Widget>[
-          NaverMap(
-            zoomGestureEnable: true,
-            locationButtonEnable: true,
-            onMapCreated: _onMapCreated,
-            markers: _markers,
-            initLocationTrackingMode: LocationTrackingMode.Follow,
-          ),
-        ],
-      ),
+    return NaverMap(
+      zoomGestureEnable: true,
+      locationButtonEnable: true,
+      onMapCreated: _onMapCreated,
+      markers: _markers,
+      initLocationTrackingMode: LocationTrackingMode.Follow,
     );
   }
 
@@ -407,10 +400,10 @@ class _MarkerMapPageState extends State<MarkerMapPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
+        body: Stack(
           children: <Widget>[
-            _controlPanel(),
             _naverMap(),
+            _controlPanel(),
           ],
         ),
       ),
